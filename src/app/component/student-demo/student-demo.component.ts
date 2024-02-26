@@ -95,7 +95,8 @@ toggleIdField() {
       
       this.studentService.createStudent(this.studentForm.value).subscribe((response: Student) => {
         /** Alert service is not workable , I will try find issue */
-        this.alertService.success('Record added successfully', this.alertOptions);
+        /** I will next try to implement bussinees logic & Alert service issue will be resolved */
+        this.alertService.success('Record Added Successfully', this.alertOptions);
         
       }, error => {
         this.alertService.warn(error?.error?.message);
