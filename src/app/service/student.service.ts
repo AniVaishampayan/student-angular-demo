@@ -11,11 +11,11 @@ export class StudentService {
   public data$ = this.dataSubject.asObservable();
 
   createStudent(student: Student): Observable<Student> {
-    return this.http.post<Student>('http://localhost:8090/api/students',student);
+    return this.http.post<Student>('http://localhost:8090/api/students/save',student);
   }
 
   getStudents(): Observable<Array<Student>> {
-    return this.http.get<Array<Student>>('http://localhost:8090/api/students');
+    return this.http.get<Array<Student>>('http://localhost:8090/api/students/list');
   }
 
   searchStudentById(id: number): Observable<Student> {
