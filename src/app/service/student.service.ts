@@ -10,10 +10,10 @@ export class StudentService {
   public data$ = this.dataSubject.asObservable();
 
   createTest(): Observable<string> {
-    return this.http.post('http://localhost:6001/api/students/Saving', {}, { responseType: 'text' });
+    return this.http.post('http://192.168.1.16:6969/api/students/Saving', {}, { responseType: 'text' });
   }
 
   deleteTest(): Observable<string> {
-    return this.http.delete('http://localhost:6001/api/students/Delete', { responseType: 'text' });
+    return this.http.delete('http://192.168.1.16:6969/api/students/Delete', { responseType: 'text' });
   }
 }
