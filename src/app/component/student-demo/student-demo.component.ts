@@ -31,30 +31,13 @@ toggleIdField() {
   this.isIdDisabled = false;
 }
   ngOnInit(): void {
-    this.collectQueryParams();
       this.initForm();
-      this.studentForm
-      .get('id')
-      ?.valueChanges.subscribe((value: number) => {
-        this.studentForm
-          .get('id')
-          ?.setValue(value, { emitEvent: false });
-      });
-
       this.studentForm
       .get('name')
       ?.valueChanges.subscribe((value: string) => {
         this.studentForm
           .get('name')
           ?.setValue(value.toUpperCase(), { emitEvent: false });
-      });
-
-      this.studentForm
-      .get('age')
-      ?.valueChanges.subscribe((value: number) => {
-        this.studentForm
-          .get('age')
-          ?.setValue(value, { emitEvent: false });
       });
   }
   initForm() {
@@ -65,43 +48,16 @@ toggleIdField() {
     });
   }
 
-  collectQueryParams() {
-    this.route.queryParams.subscribe((params) => {
-      this.queryParams = params;
-
-      if (this.queryParams['id'] != undefined) {
-        console.log(this.queryParams['id']);
-        this.actionBtn = 'Update';
-        this.searchStudentById(this.queryParams['id']);
-        this.isDisabled = true;
-      } else {
-        this.actionBtn = 'Save';
-      }
-    });
-  }
-
-  searchStudentById(id: number) {
-    this.studentService
-      .searchStudentById(id)
-      .subscribe((response: Student) => {
-        this.studentForm.patchValue(response);
-        this.student = response;
-      });
-  }
-
   onSubmit()
   {
     if (this.actionBtn == "Save"){
       
       this.studentService.createStudent(this.studentForm.value).subscribe((response: Student) => {
-        /** Alert service is not workable , I will try find issue */
-        /** I will next try to implement bussinees logic & Alert service issue will be resolved */
         this.alertService.success('Record Added Successfully', this.alertOptions);
-        
       }, error => {
         this.alertService.warn(error?.error?.message);
       });
     }
   }
-
+  
 }
