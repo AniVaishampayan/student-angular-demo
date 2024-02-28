@@ -65,6 +65,9 @@
             },
             "development": {
               "browserTarget": "student:build:development"
+            },
+            "options":{
+              "port":6002
             }
           },
           "defaultConfiguration": "development"
