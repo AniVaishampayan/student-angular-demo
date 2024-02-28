@@ -1,9 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params } from '@angular/router';
-import { AlertOptions } from 'src/app/model/alert.model';
-import { Student } from 'src/app/model/student.model';
-import { AlertService } from 'src/app/service/alert.service';
 import { StudentService } from 'src/app/service/student.service';
 
 @Component({
