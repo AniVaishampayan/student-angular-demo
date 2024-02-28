@@ -7,14 +7,11 @@ import { StudentDemoComponent } from './component/student-demo/student-demo.comp
 import { ReactiveFormsModule } from '@angular/forms';
 import { StudentService } from './service/student.service';
 import { HttpClientModule } from '@angular/common/http';
-import { AlertComponent } from './component/alert/alert.component';
-import { AlertService } from './service/alert.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    StudentDemoComponent,
-    AlertComponent
+    StudentDemoComponent
   ],
   imports: [
     BrowserModule,
@@ -22,7 +19,7 @@ import { AlertService } from './service/alert.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [StudentService,AlertService],
+  providers: [StudentService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
