@@ -1,19 +1,9 @@
 <div class="row justify-content-center">
     <div class="col-md-6 bg-white text-left py-3 rounded shadow">
       <form [formGroup]="studentForm">
-        <div class="mb-3">
-          <label for="id" class="form-label">Student ID:</label>
-          <input type="text" class="form-control" id="id" formControlName="id" [readOnly]="isIdDisabled" >
-        </div>
-        <div class="mb-3">
-          <label for="name" class="form-label">Student Name:</label>
-          <input type="text" class="form-control" id="name" formControlName="name">
-        </div>
-        <div class="mb-3">
-          <label for="age" class="form-label">Student Age:</label>
-          <input type="number" class="form-control" id="age" formControlName="age">
-        </div>
-        <button type="submit" class="btn btn-primary" (click)="onSubmit()">{{actionBtn}}</button>
+        <button type="submit" class="btn btn-primary" (click)="onCreate()">Get</button>&nbsp;&nbsp;
+        <button type="submit" class="btn btn-primary" (click)="onDelete()">Delete</button>
+        {{response}}
       </form>
     </div>
   </div>
