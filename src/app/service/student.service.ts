@@ -21,5 +21,4 @@ export class StudentService {
   searchStudentById(id: number): Observable<Student> {
     return this.http.get<Student>('http://localhost:6001/api/students/' + id);
   }
-
 }
