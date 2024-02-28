@@ -10,15 +10,13 @@ export class StudentService {
   private dataSubject = new BehaviorSubject<string>('');
   public data$ = this.dataSubject.asObservable();
 
-  createStudent(student: Student): Observable<Student> {
-    return this.http.post<Student>('http://localhost:6001/api/students/save',student);
+  createTest(): Observable<string> {
+    return this.http.post('http://localhost:6001/api/students/Saving', {}, { responseType: 'text' });
   }
 
-  getStudents(): Observable<Array<Student>> {
-    return this.http.get<Array<Student>>('http://localhost:6001/api/students/list');
+  deleteTest(): Observable<string> {
+    return this.http.delete('http://localhost:6001/api/students/Delete', { responseType: 'text' });
   }
 
-  searchStudentById(id: number): Observable<Student> {
-    return this.http.get<Student>('http://localhost:6001/api/students/' + id);
-  }
+ 
 }
