@@ -17,6 +17,4 @@ export class StudentService {
   deleteTest(): Observable<string> {
     return this.http.delete('http://localhost:6001/api/students/Delete', { responseType: 'text' });
   }
-
- 
 }
